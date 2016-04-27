@@ -14,5 +14,9 @@ $('#app-body')
       .find('input[type="text"]')
       .val();
 
-    page(`/search?q=${busqueda}`)
+    if (busqueda == '') {
+				page('/');
+			}else {
+				page(`/search?q=${busqueda}`);
+			}
   })
